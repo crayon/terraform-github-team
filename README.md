@@ -1,2 +1,5 @@
-# template-terraform-modules
-Template for Terraform modules
+# Terraform module - GitHub Teams
+A module used to create and manage teams on GitHub
+
+
+> Currently **very** under development
