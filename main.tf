@@ -1,16 +1,17 @@
 terraform {
   required_providers {
     github = {
-      source = "integrations/github"
+      source  = "integrations/github"
       version = ">=4.13.0"
     }
   }
 }
 
 resource "github_team" "team" {
-  name        = var.name
-  description = var.description
-  privacy     = var.privacy
+  name           = var.name
+  description    = var.description
+  privacy        = var.privacy
+  parent_team_id = var.parent_team
 }
 
 resource "github_team_membership" "members" {

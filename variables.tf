@@ -1,28 +1,29 @@
 variable "name" {
-  type = string
+  type        = string
   description = "Name of the team."
 }
-
 variable "description" {
-  type = string
+  type        = string
   description = "Description used for the team."
-  default = null
+  default     = null
 }
-
 variable "privacy" {
-  type = string
+  type        = string
   description = "Privacy setting for the team."
-  default = "secret"
+  default     = "secret"
 }
-
+variable "parent_team" {
+  type        = string
+  description = "The ID of a parent team, if applicable"
+  default     = null
+}
 variable "members" {
-  type = list(string)
+  type        = list(string)
   description = "Members of the team."
-  default = []
+  default     = []
 }
-
 variable "maintainers" {
-  type = list(string)
+  type        = list(string)
   description = "Maintainers of the team."
-  default = []
+  default     = []
 }

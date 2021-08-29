@@ -1,0 +1,26 @@
+name: Terraform, checks and tests
+on:
+  push: {}
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  tflint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: terraform-linters/setup-tflint@v1
+        name: Setup TFLint
+        with:
+          tflint_version: v0.31.0
+      - name: Init TFLint
+        run: tflint --init
+      - name: Run TFLint
+        run: tflint -f compact
+  terraform:
+    name: Terraform, fmt
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hashicorp/setup-terraform@v1
+    - run: terraform fmt -check -recursive
