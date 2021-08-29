@@ -1,8 +1,12 @@
 name: Terraform, checks and tests
 on:
-  push: {}
+  push:
+    paths-ignore:
+    - '**.md'
   pull_request:
     types: [opened, synchronize]
+    paths-ignore:
+    - '**.md'
 
 jobs:
   tflint:
