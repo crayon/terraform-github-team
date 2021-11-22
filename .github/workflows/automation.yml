@@ -2,7 +2,7 @@ name: Automation
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopen]
   pull_request:
     types: [opened]
 env:
