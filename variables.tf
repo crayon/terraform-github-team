@@ -27,3 +27,11 @@ variable "maintainers" {
   description = "Maintainers of the team."
   default     = []
 }
+variable "repositories" {
+  type = list(object({
+    name       = string
+    permission = string
+  }))
+  description = "A list of repositories associated with the team and the what access the members should have."
+  default     = []
+}
