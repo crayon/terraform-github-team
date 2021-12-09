@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Add to Terraform project
     steps:
-    - name: If opened, add to project
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
+    - name: Project automation
+      uses: crayon/composite-projectautomation@v1.0.0-beta1
       with:
-        project: 'https://github.com/orgs/crayon/projects/2'
+        project_number: 7
+        id: ${{ github.event.pull_request.node_id || github.event.issue.node_id }}
